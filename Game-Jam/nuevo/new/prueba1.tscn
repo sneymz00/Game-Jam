@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://d31hp7xsci2fu"]
+
+[ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_8rjmk"]
+[ext_resource type="PackedScene" uid="uid://cbaainu22fl3y" path="res://map/animartted_p_layer.tscn" id="2_gt2dn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5vnyc"]
+height = 28.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_8rjmk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_5vnyc")
+
+[node name="osito" parent="." instance=ExtResource("2_gt2dn")]

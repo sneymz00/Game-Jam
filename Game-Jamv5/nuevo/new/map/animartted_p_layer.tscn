@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbaainu22fl3y"]
+
+[ext_resource type="SpriteFrames" uid="uid://ditfcn5ym2slw" path="res://map/new_sprite_frames.tres" id="1_ed7qo"]
+
+[node name="osito" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.75, 2)
+scale = Vector2(0.990446, 0.984)
+sprite_frames = ExtResource("1_ed7qo")
+animation = &"adelante"

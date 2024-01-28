@@ -1,0 +1,32 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://b41fj0ay20w5p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4jrq"]
+region = Rect2(10, 0, 157, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ere7k"]
+region = Rect2(167, 0, 157, 250)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4jrq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ere7k")
+}],
+"loop": true,
+"name": &"adelante",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ere7k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4jrq")
+}],
+"loop": true,
+"name": &"atras",
+"speed": 2.0
+}]
