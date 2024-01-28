@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnmoamx7clqyu"]
+
+[sub_resource type="GDScript" id="GDScript_qk4pa"]
+script/source = "extends Area2D
+
+@export var scenes : String
+
+
+func _on_body_entered(body):
+	if body.name == \"YummyBear\":
+		get_tree().change_scene_to_file(\"res://scenes/\"+scenes+\".tscn\")
+	pass # Replace with function body.
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nkjue"]
+size = Vector2(26, 42)
+
+[node name="portal" type="Area2D"]
+script = SubResource("GDScript_qk4pa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(140, 178)
+shape = SubResource("RectangleShape2D_nkjue")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
