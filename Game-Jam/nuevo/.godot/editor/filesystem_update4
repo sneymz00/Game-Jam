@@ -1,0 +1,5 @@
+res://combate.tscn
+res://data/jokes.txt
+res://scripts/CombatScene/combate.gd
+res://area_2d.tscn
+res://prueba2.tscn
