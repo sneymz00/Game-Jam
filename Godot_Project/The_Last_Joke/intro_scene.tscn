@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://cny14bd6qfuxm"]
+
+[ext_resource type="Script" path="res://scripts/IntroScene/intro_scene.gd" id="1_cd7fo"]
+[ext_resource type="Texture2D" uid="uid://ls0adbw7l15y" path="res://sprites/sprites-carp/combat-carp-1048-647.png" id="1_f6rht"]
+[ext_resource type="Texture2D" uid="uid://cjdri04438pft" path="res://sprites/sprites-carp/carp-floor.png" id="3_3v54p"]
+[ext_resource type="FontFile" uid="uid://do0ycymxf6ym2" path="res://fonts/DotGothic16-Regular.ttf" id="4_n3p8e"]
+
+[node name="IntroScene" type="Node2D"]
+script = ExtResource("1_cd7fo")
+
+[node name="Fondo" type="TextureRect" parent="."]
+offset_right = 1314.0
+offset_bottom = 792.0
+texture = ExtResource("1_f6rht")
+
+[node name="bg_texto" type="Sprite2D" parent="Fondo"]
+position = Vector2(675, 492)
+scale = Vector2(16.48, 7)
+texture = ExtResource("3_3v54p")
+
+[node name="LoreIntro" type="RichTextLabel" parent="."]
+offset_left = 274.0
+offset_top = 342.0
+offset_right = 1072.0
+offset_bottom = 448.0
+theme_override_colors/font_selected_color = Color(0.0156863, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_n3p8e")
+theme_override_font_sizes/normal_font_size = 27
+text = "En el  feliz mundo de gomilandia... Unos malvados payasos han secuestrado a todos a tus amados y planean repartirlos como trofeo en fiestas de cumpleanyos.
+
+Solo tu puedes evitarlo"
+fit_content = true
+
+[node name="Press F" type="RichTextLabel" parent="."]
+offset_left = 506.0
+offset_top = 565.0
+offset_right = 804.0
+offset_bottom = 649.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+text = "          Press F ... 
+    to pay respect
+"
+fit_content = true

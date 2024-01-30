@@ -1,0 +1,119 @@
+[gd_scene load_steps=10 format=3 uid="uid://b2bsjrb8uq54n"]
+
+[ext_resource type="Script" path="res://scripts/CombatScene/combate.gd" id="1_76hwp"]
+[ext_resource type="Texture2D" uid="uid://c42t0dfvqpwio" path="res://sprites/sprites-carp/combat-carp-65%opacity-1048-647.png" id="2_h1b21"]
+[ext_resource type="Texture2D" uid="uid://cqjkhcvrdiacl" path="res://sprites/sprites-gummy-bear/gummy-bear-545x624.png" id="4_geheq"]
+[ext_resource type="Texture2D" uid="uid://cc4ul0wan35rj" path="res://sprites/sprites-clown/clown-blue-545x624.png" id="5_uhv4b"]
+[ext_resource type="FontFile" uid="uid://do0ycymxf6ym2" path="res://fonts/DotGothic16-Regular.ttf" id="6_vc34g"]
+[ext_resource type="Texture2D" uid="uid://ds30p3mrusbv5" path="res://sprites/sprites-clown/nose-blue-31x33.png" id="7_j7nkh"]
+[ext_resource type="Texture2D" uid="uid://cjdri04438pft" path="res://sprites/sprites-carp/carp-floor.png" id="8_mlgv7"]
+[ext_resource type="FontFile" uid="uid://ck4ku4amf6qp4" path="res://fonts/SpaceMono-Regular.ttf" id="11_qpa2r"]
+
+[sub_resource type="GDScript" id="GDScript_sxsv5"]
+script/source = "extends RichTextLabel
+
+#var Combate = preload(\"res://combate.tscn\")
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+func _on_keypressed_timer_timeout():
+	pass
+	#pass # Replace with function body.
+	#en caso de errores#
+	#GlobalVars._reset_quest()
+	#print(\"Puntuacion \", GlobalVars.score)
+	#hit_index = 0
+	#texto_objetivo.set_visible_characters(texto_objetivo.text.length())			
+	#texto_objetivo.text = quested_text
+"
+
+[node name="Combate" type="Node2D"]
+scale = Vector2(1.007, 0.994766)
+script = ExtResource("1_76hwp")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -3.97219
+offset_top = 1.00526
+offset_right = 1296.03
+offset_bottom = 822.005
+texture = ExtResource("2_h1b21")
+stretch_mode = 1
+
+[node name="Lbl_rename" type="Label" parent="TextureRect"]
+z_as_relative = false
+layout_mode = 0
+offset_left = 37.7915
+offset_top = 14.8159
+offset_right = 300.791
+offset_bottom = 104.816
+theme_override_fonts/font = ExtResource("11_qpa2r")
+theme_override_font_sizes/font_size = 60
+text = "SCORE :"
+
+[node name="Num_points" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 345.637
+offset_top = 19.8422
+offset_right = 385.637
+offset_bottom = 109.842
+theme_override_fonts/font = ExtResource("11_qpa2r")
+theme_override_font_sizes/font_size = 60
+text = "0
+"
+
+[node name="player" type="Sprite2D" parent="."]
+position = Vector2(254.22, 471.467)
+scale = Vector2(0.225268, 0.233345)
+texture = ExtResource("4_geheq")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(0.5, -2, 511, 620)
+
+[node name="Clown1" type="Sprite2D" parent="."]
+position = Vector2(1035.31, 459.687)
+scale = Vector2(0.267071, 0.264514)
+texture = ExtResource("5_uhv4b")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(0.817993, -8.545, 547, 633)
+
+[node name="Texto" type="RichTextLabel" parent="Clown1"]
+offset_left = -3092.0
+offset_top = -1084.0
+offset_right = 492.0
+offset_bottom = -851.0
+theme_override_colors/default_color = Color(0, 0.00392157, 0.105882, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_vc34g")
+theme_override_font_sizes/normal_font_size = 160
+text = "TEXTO DE PRUEBA"
+fit_content = true
+script = SubResource("GDScript_sxsv5")
+
+[node name="blue_nose" type="Sprite2D" parent="Clown1"]
+position = Vector2(-94.9759, -62.0098)
+scale = Vector2(1.73721, 1.80562)
+texture = ExtResource("7_j7nkh")
+region_enabled = true
+region_rect = Rect2(0, 0, 31, 33)
+
+[node name="Marker2D" type="Marker2D" parent="Clown1/blue_nose"]
+position = Vector2(-2.27803, 199.187)
+scale = Vector2(2.29392, 2.27752)
+
+[node name="KeypressedTimer" type="Timer" parent="."]
+
+[node name="Circus_floor" type="Sprite2D" parent="."]
+position = Vector2(651.85, 726.302)
+scale = Vector2(26.0412, 7.33841)
+texture = ExtResource("8_mlgv7")
+
+[connection signal="timeout" from="KeypressedTimer" to="." method="_on_keypressed_timer_timeout"]

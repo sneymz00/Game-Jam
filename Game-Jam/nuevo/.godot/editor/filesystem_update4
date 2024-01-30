@@ -1,9 +1,0 @@
-res://combate.tscn
-res://area_2d.tscn
-res://intro_scene.tscn
-res://intro_scene.gd
-res://primer intento.tscn
-res://animartted_p_layer.tscn
-res://new_sprite_frames.tres
-res://scripts/intro/intro_scene.gd
-res://scripts/CombatScene/combate.gd
